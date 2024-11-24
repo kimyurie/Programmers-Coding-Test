@@ -39,8 +39,7 @@ class Solution {
 
         return Integer.parseInt(answer.toString());
     }
-}"zero", "one", "two", "three", "four",
-//                "five", "six", "seven", "eight", "nine"
+}
 
 // m2) 다른 방법
 //class Solution {
