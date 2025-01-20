@@ -5,20 +5,21 @@ import java.util.*;
 
 class Solution {
     public int solution(int[] elements) {
-        // 중복 제거해야하므로 hashSet 이용하기
-        HashSet<Integer> hs = new HashSet<>(); // 합을 추가할 set
+        int answer = 0;
+        HashSet<Integer> hs = new HashSet<>();
 
-        int start = 1;
-        while(start <= elements.length) {
-            for(int i = 0; i < elements.length; i++) {
-                int value = 0;
-                for(int j = i; j < i + start; j++) {
-                    value += elements[j % elements.length];
+        for(int i = 1; i <= elements.length; i++) {
+            for(int j = 0; j < elements.length; j++) {
+                int sum = 0;
+                for(int z = j; z < j+i; z++) {
+                    sum += elements[z % elements.length];
                 }
-                hs.add(value);
+                hs.add(sum);
             }
-            start++;
         }
-        return hs.size();
+
+        answer = hs.size();
+
+        return answer;
     }
 }
